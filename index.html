@@ -210,10 +210,26 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .approval{margin-top:22px;padding:16px 20px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);color:var(--muted)}
 .approval b{color:var(--slate)}
 
-footer{background:var(--ink);color:#C9C3AE;padding:36px 0;font-size:15px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
-footer img{width:56px;height:56px;border-radius:50%;background:#fff;padding:3px}
-footer p{margin:0;max-width:62ch}
+footer{background:linear-gradient(180deg,var(--ink),#141f25);color:#C9C3AE;padding:0;font-size:15px;border-top:3px solid var(--gold)}
+footer .wrap{padding-top:48px;padding-bottom:24px}
+.fgrid{display:grid;grid-template-columns:1.4fr .8fr 1.2fr;gap:40px}
+.fname{display:flex;align-items:center;gap:14px}
+.fname img{width:64px;height:64px;border-radius:50%;background:#fff;padding:3px;flex:none}
+.fname strong{display:block;font-family:var(--head);font-size:22px;color:#fff;line-height:1.1}
+.fname span{display:block;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright);margin-top:4px}
+.ftag{margin:16px 0 0;max-width:42ch}.faddr{margin:10px 0 0;color:#fff;font-weight:600}
+footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright)}
+.flinks{display:flex;flex-direction:column;gap:8px}
+.flinks h4{margin-bottom:6px}
+.flinks a,.flink2{color:#E8E2CC;text-decoration:none}
+.flinks a:hover,.flink2:hover{color:#fff;text-decoration:underline}
+.fgive p{margin:0 0 14px}
+.fbtn{display:inline-block;background:var(--gold-bright);color:#1b1b1b;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px}
+.fbtn:hover{filter:brightness(1.08)}.fbtn:focus-visible,.flinks a:focus-visible,.flink2:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.flink2{display:block;margin-top:12px}
+.fbar{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.fbar p{margin:0;max-width:70ch}.fdu{color:var(--gold-bright);font-weight:600}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr;gap:28px}}
 
 @media (max-width:860px){
   .split,.give{grid-template-columns:1fr}
@@ -544,8 +560,32 @@ footer p{margin:0;max-width:62ch}
 
 <footer>
   <div class="wrap">
-    <img src="img/logo.png" alt="Logo Masjid U12 Cahaya Alam" data-en-alt="Masjid U12 Cahaya Alam logo" width="56" height="56">
-    <p data-en="Based on the Masjid U12 Construction Proposal Working Paper, draft V1, August 2026. Drawings and figures are proposals and subject to approval by the authorities.">Berdasarkan Kertas Kerja Cadangan Pembinaan Masjid U12, draf V1, Ogos 2026. Lukisan dan angka ialah cadangan dan tertakluk kepada kelulusan pihak berkuasa.</p>
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="fname"><img src="img/logo.png" alt="Logo Masjid U12 Cahaya Alam" data-en-alt="Masjid U12 Cahaya Alam logo" width="64" height="64">
+          <div><strong>Masjid U12</strong><span>Cahaya Alam</span></div></div>
+        <p class="ftag" data-en="A contemporary, minimalist mosque for the Cahaya Alam community: worship, da'wah, education and activities.">Sebuah masjid kontemporari minimalis untuk komuniti Cahaya Alam: ibadah, dakwah, pendidikan dan kegiatan.</p>
+        <p class="faddr" data-en="Cahaya Alam, Section U12, Shah Alam, Selangor Darul Ehsan">Cahaya Alam, Seksyen U12, Shah Alam, Selangor Darul Ehsan</p>
+      </div>
+      <nav class="flinks" aria-label="Pautan pantas" data-en-aria="Quick links">
+        <h4 data-en="Explore">Teroka</h4>
+        <a href="#mengapa" data-en="Why a mosque">Mengapa masjid</a>
+        <a href="#reka-bentuk" data-en="Design">Reka bentuk</a>
+        <a href="#kemudahan" data-en="Facilities">Kemudahan</a>
+        <a href="#kos" data-en="Cost">Kos</a>
+        <a href="#jawatankuasa" data-en="Committee">Jawatankuasa</a>
+      </nav>
+      <div class="fgive">
+        <h4 data-en="Contribute">Sumbangan</h4>
+        <p data-en="Special Waqf collection authorised by Perbadanan Wakaf Selangor (PWS) until 31 December 2027.">Kutipan Wakaf Khas dibenarkan oleh Perbadanan Wakaf Selangor (PWS) sehingga 31 Disember 2027.</p>
+        <a class="fbtn" href="#qr" data-en="Contribute via DuitNow QR">Sumbang melalui DuitNow QR</a>
+        <a class="flink2" href="#kebenaran" data-en="View authorisation">Lihat kebenaran rasmi</a>
+      </div>
+    </div>
+    <div class="fbar">
+      <p data-en="Based on the Masjid U12 Construction Proposal Working Paper, draft V1, August 2026. Drawings and figures are proposals and subject to approval by the authorities.">Berdasarkan Kertas Kerja Cadangan Pembinaan Masjid U12, draf V1, Ogos 2026. Lukisan dan angka ialah cadangan dan tertakluk kepada kelulusan pihak berkuasa.</p>
+      <p class="fdu" data-en="Jazakumullahu khairan for your support.">Jazakumullahu khairan atas sokongan anda.</p>
+    </div>
   </div>
 </footer>
 
