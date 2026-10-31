@@ -165,6 +165,16 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .payee b{font-family:var(--head);letter-spacing:.02em}
 .pay .btn.primary{background:var(--slate);color:#fff}
 .pay .btn.primary:hover{background:var(--ink)}
+.pay .info{margin:0 0 18px;display:grid;gap:16px}
+.pay .info h4{margin:0 0 6px;font:700 13px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.pay .info dl{display:grid;grid-template-columns:110px 1fr;gap:4px 14px;margin:0}
+.pay .info dt{color:var(--muted);font-size:15px}
+.pay .info dd{margin:0;font-weight:600;color:var(--slate)}
+.pay .info .acct{font-family:var(--head);font-size:clamp(18px,2.6vw,22px);letter-spacing:.06em}
+.pay .info ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.pay .info a{font-weight:700;color:var(--slate)}
+.pay .taxnote{margin:0 0 18px;padding:14px 16px;border-radius:10px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.6);color:var(--slate);font-size:15px}
+.pay .taxnote b{display:block;font-family:var(--head);margin-bottom:4px}
 
 /* jawatankuasa */
 .org{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:26px}
@@ -208,7 +218,7 @@ footer p{margin:0;max-width:62ch}
 <body>
 <a class="skip" href="#kandungan">Langkau ke kandungan</a>
 
-<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Nombor akaun, jumlah kutipan dan hubungan urusetia belum dimuktamadkan.</div>
+<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Jumlah kutipan belum dimuktamadkan.</div>
 
 <header class="nav">
   <div class="wrap">
@@ -395,20 +405,33 @@ footer p{margin:0;max-width:62ch}
           <li><span>Imbas kod ini. Jika anda membuka laman ini di telefon yang sama, muat turun imej QR dan muat naiknya ke aplikasi.</span></li>
           <li><span>Semak nama penerima, masukkan jumlah sumbangan dan sahkan.</span></li>
         </ol>
-        <p class="payee">Nama penerima: <b>Pembinaan Masjid U12 Caha…</b> (nama mungkin dipaparkan terpotong oleh aplikasi bank)</p>
+        <p class="payee">Nama penerima: <b>Pembinaan Masjid U12 Cahaya Alam</b> (nama mungkin dipaparkan terpotong oleh aplikasi bank)</p>
+        <div class="info">
+          <div>
+            <h4>Maklumat akaun bank</h4>
+            <dl>
+              <dt>Nama akaun</dt><dd>Pembinaan Masjid U12 Cahaya Alam</dd>
+              <dt>Bank</dt><dd>Bank Islam</dd>
+              <dt>No. akaun</dt><dd class="acct">12038010163467</dd>
+            </dl>
+          </div>
+          <div>
+            <h4>Sila hubungi kami</h4>
+            <ul>
+              <li><a href="tel:+60172208466">017-220 8466</a> (Capt. Maghzan)</li>
+              <li><a href="tel:+60122569239">012-256 9239</a> (Hj. Fakhruddin)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="taxnote"><b>Potongan cukai pendapatan (LHDN)</b>Sumbangan wakaf layak mendapat potongan cukai pendapatan apabila anda menerima Resit Rasmi Potongan Wakaf daripada PWS, tertakluk kepada had 10% daripada pendapatan agregat. Sila minta resit dan berikan maklumat lengkap anda semasa menyumbang.</p>
         <div class="btns"><a class="btn primary" href="img/duitnow-qr.png" download="DuitNow-QR-Masjid-U12.png">Muat turun imej QR</a></div>
       </div>
     </div>
     <div class="give">
-      <div class="card status">
+      <div class="card status" style="grid-column:1/-1">
         <span class="pill">Akan dikemas kini</span>
-        <h3>Nombor akaun dan jumlah kutipan</h3>
-        <p>Nombor akaun bank dan jumlah kutipan akan dipaparkan di sini selepas dimuktamadkan oleh jawatankuasa.</p>
-      </div>
-      <div class="card status">
-        <span class="pill">Akan dikemas kini</span>
-        <h3>Hubungi urusetia</h3>
-        <p>Maklumat perhubungan urusetia akan dipaparkan di sini selepas disahkan.</p>
+        <h3>Jumlah kutipan</h3>
+        <p>Jumlah kutipan akan dipaparkan di sini selepas dimuktamadkan oleh jawatankuasa.</p>
       </div>
     </div>
   </div>
