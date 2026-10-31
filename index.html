@@ -101,6 +101,20 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdr
 .stat{background:rgba(27,40,48,.82);padding:18px 20px}
 .stat b{display:block;font-family:var(--head);font-size:clamp(22px,3.4vw,32px);color:var(--gold-bright);line-height:1.1}
 .stat span{font-size:14px;color:#D8D2BD}
+.fund{position:relative;z-index:2;margin-top:26px;padding:22px 26px;border:2px solid var(--gold-bright);border-radius:var(--radius);background:rgba(27,40,48,.86);backdrop-filter:blur(3px)}
+.fund .fl{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.fund .frow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:8px}
+.fund .fnow{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05;color:var(--gold-bright)}
+.fund .fof{font-size:clamp(15px,2vw,18px);color:#EDE7D3}
+.fund .ftrack{height:16px;margin-top:14px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
+.fund .ftrack i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));transition:width .9s ease}
+.fund .fmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:10px;font-size:15px;color:#D8D2BD}
+.fund .fmeta b{color:#fff}
+.fund .fcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:16px}
+.fund .fcta .btn{margin:0}
+.fund .fnote{font-size:14px;color:#D8D2BD}
+@media (prefers-reduced-motion:reduce){.fund .ftrack i{transition:none}}
+
 
 /* hadis */
 .hadith{margin:28px 0 0;max-width:780px;padding:22px 26px;border-left:4px solid var(--gold-bright);border-radius:0 var(--radius) var(--radius) 0;background:rgba(27,40,48,.62);backdrop-filter:blur(3px)}
@@ -364,6 +378,13 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
       <div class="stat"><b data-en="3 levels">3 aras</b><span data-en="Including service level">Termasuk aras servis</span></div>
       <div class="stat"><b data-en="RM30.95 million">RM30.95 juta</b><span data-en="Estimated total project cost">Anggaran kos keseluruhan</span></div>
     </div>
+    <section class="fund" id="kutipan" aria-labelledby="fundl">
+      <p class="fl" id="fundl" data-en="Latest contributions">Kutipan terkini</p>
+      <div class="frow"><span class="fnow" id="fundNow">—</span><span class="fof" id="fundOf"></span></div>
+      <div class="ftrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fundBar"><i id="fundFill"></i></div>
+      <div class="fmeta"><span id="fundPct"></span><span id="fundLeft"></span></div>
+      <div class="fcta"><a class="btn primary" href="#wakaf" data-en="Contribute now">Berwakaf sekarang</a><span class="fnote" id="fundNote"></span></div>
+    </section>
     <p class="herocta" data-en="Together, we can help establish a mosque that serves not only as a place of worship, but also as a centre for knowledge, welfare and stronger community ties.">Bersama-sama kita menjayakan pembinaan sebuah masjid yang bukan sahaja menjadi tempat menunaikan ibadah, malah berperanan sebagai pusat ilmu, kebajikan dan pengukuhan ukhuwah masyarakat.</p>
   </div>
 </section>
@@ -693,6 +714,30 @@ var META = {
 var LANG = "ms";
 function fmt(n){ return "RM" + n.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2}); }
 
+
+/* Kutipan terkini: kemas kini dua nilai ini sahaja (RM, nombor). null = belum dimuktamadkan. */
+var KUTIPAN = null, KUTIPAN_TARIKH = "";
+function renderFund(){
+  var en = LANG === "en", T = JUMLAH, K = KUTIPAN;
+  var now = document.getElementById("fundNow"), of = document.getElementById("fundOf");
+  var pct = document.getElementById("fundPct"), left = document.getElementById("fundLeft");
+  var note = document.getElementById("fundNote"), fill = document.getElementById("fundFill");
+  var bar = document.getElementById("fundBar");
+  of.textContent = (en ? "of RM" : "daripada RM") + T.toLocaleString("en-MY") + (en ? " needed" : " diperlukan");
+  if (K === null) {
+    now.textContent = en ? "To be updated" : "Akan dikemas kini";
+    pct.textContent = ""; left.textContent = "";
+    note.textContent = en ? "The total collected will be shown once finalised by the Committee." : "Jumlah kutipan akan dipaparkan selepas dimuktamadkan oleh jawatankuasa.";
+    fill.style.width = "0%"; bar.setAttribute("aria-valuenow","0"); return;
+  }
+  var p = Math.min(100, K / T * 100);
+  now.textContent = "RM" + K.toLocaleString("en-MY");
+  pct.innerHTML = "<b>" + p.toFixed(1) + "%</b> " + (en ? "reached" : "tercapai");
+  left.innerHTML = (en ? "Still needed: " : "Baki diperlukan: ") + "<b>RM" + Math.max(0, T - K).toLocaleString("en-MY") + "</b>";
+  note.textContent = KUTIPAN_TARIKH ? (en ? "As at " : "Setakat ") + KUTIPAN_TARIKH : "";
+  bar.setAttribute("aria-valuenow", String(Math.round(p)));
+  requestAnimationFrame(function(){ fill.style.width = p + "%"; });
+}
 function renderCost(){
   var body = document.getElementById("costBody");
   body.textContent = "";
@@ -733,7 +778,7 @@ function applyLang(l){
   document.querySelectorAll(".lang button").forEach(function(b){
     b.setAttribute("aria-pressed", b.getAttribute("data-lang") === LANG ? "true" : "false");
   });
-  renderCost();
+  renderCost(); renderFund();
   var lbCap = document.getElementById("lbCap"), lbImg = document.getElementById("lbImg");
   if(document.getElementById("lb").open){ lbCap.textContent = lbImg.alt; }
 }
