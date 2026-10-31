@@ -158,6 +158,9 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .auth dl{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:12px 22px;margin:20px 0 0}
 .auth dt{color:var(--gold-bright);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
 .auth dd{margin:0;color:#fff}
+.auth .letter{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.lbtn{display:inline-flex;align-items:center;gap:9px;font:inherit;font-weight:700;color:#1b1b1b;background:var(--gold-bright);border:0;border-radius:999px;padding:11px 20px;cursor:pointer;min-height:44px}
+.lbtn:hover{filter:brightness(1.08)}.lbtn:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .auth .fine{margin:18px 0 0;font-size:15px;color:#D8D2BD}
 
 /* DuitNow QR */
@@ -437,6 +440,11 @@ footer p{margin:0;max-width:62ch}
         <dt data-en="Date of letter">Tarikh surat</dt><dd data-en="19 October 2026">19 Oktober 2026</dd>
         <dt data-en="Official receipts">Resit rasmi</dt><dd data-en="PWS receipts are written and signed only by trustees authorised by PWS: the Chairman, Deputy Chairman, Secretary, Treasurer and one committee member">Resit PWS hanya ditulis dan ditandatangani oleh pemegang amanah yang dibenarkan PWS: Pengerusi, Timbalan Pengerusi, Setiausaha, Bendahari dan seorang Ahli Jawatankuasa</dd>
       </dl>
+      <div class="letter">
+        <button type="button" class="lbtn" data-full="img/surat-pws-1.jpg" data-cap="Surat kebenaran PWS, muka 1 daripada 2 (No. K/P dan alamat ditutup)" data-en-cap="PWS authorisation letter, page 1 of 2 (IC numbers and address redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View authorisation letter (page 1)">Lihat surat kebenaran (muka 1)</span></button>
+        <button type="button" class="lbtn" data-full="img/surat-pws-2.jpg" data-cap="Surat kebenaran PWS, muka 2 daripada 2 (maklumat hubungan ditutup)" data-en-cap="PWS authorisation letter, page 2 of 2 (contact details redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="Page 2">Muka 2</span></button>
+      </div>
+      <p class="fine" data-en="Letter reference: PWS/BK/27 Jilid 2. Personal details (IC numbers, address and officer contact) have been redacted for privacy.">Rujukan surat: PWS/BK/27 Jilid 2. Butiran peribadi (No. K/P, alamat dan hubungan pegawai) telah ditutup demi privasi.</p>
       <p class="fine" data-en="Trustees are required to comply with all Special Waqf collection rules set by PWS.">Pemegang amanah dikehendaki mematuhi semua peraturan Kutipan Wakaf Khas yang ditetapkan oleh PWS.</p>
     </div>
     <div class="pay" id="qr">
