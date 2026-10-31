@@ -106,6 +106,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdr
 .fund .frow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:8px}
 .fund .fnow{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05;color:var(--gold-bright)}
 .fund .fof{font-size:clamp(15px,2vw,18px);color:#EDE7D3}
+.fund .fof b{font-family:var(--head);font-size:1.25em;color:#FF9A2E}
+.stat b.target{color:#FF9A2E}
 .fund .ftrack{height:16px;margin-top:14px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
 .fund .ftrack i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));transition:width .9s ease}
 .fund .fmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:10px;font-size:15px;color:#D8D2BD}
@@ -376,7 +378,7 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
       <div class="stat"><b>4,000</b><span data-en="Worshipper capacity">Kapasiti jemaah</span></div>
       <div class="stat"><b data-en="2.65 acres">2.65 ekar</b><span data-en="Mosque reserve area">Keluasan rizab masjid</span></div>
       <div class="stat"><b data-en="3 levels">3 aras</b><span data-en="Including service level">Termasuk aras servis</span></div>
-      <div class="stat"><b data-en="RM30.95 million">RM30.95 juta</b><span data-en="Estimated total project cost">Anggaran kos keseluruhan</span></div>
+      <div class="stat"><b class="target" data-en="RM30.95 million">RM30.95 juta</b><span data-en="Estimated total project cost">Anggaran kos keseluruhan</span></div>
     </div>
     <section class="fund" id="kutipan" aria-labelledby="fundl">
       <p class="fl" id="fundl" data-en="Latest contributions">Kutipan terkini</p>
@@ -723,7 +725,7 @@ function renderFund(){
   var pct = document.getElementById("fundPct"), left = document.getElementById("fundLeft");
   var note = document.getElementById("fundNote"), fill = document.getElementById("fundFill");
   var bar = document.getElementById("fundBar");
-  of.textContent = (en ? "of RM" : "daripada RM") + T.toLocaleString("en-MY") + (en ? " needed" : " diperlukan");
+  of.innerHTML = (en ? "of " : "daripada ") + "<b>RM" + T.toLocaleString("en-MY") + "</b>" + (en ? " needed" : " diperlukan");
   if (K === null) {
     now.textContent = en ? "To be updated" : "Akan dikemas kini";
     pct.textContent = ""; left.textContent = "";
