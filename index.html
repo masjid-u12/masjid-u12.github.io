@@ -138,6 +138,18 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .give .card.status h3{color:var(--gold-bright)}
 .pill{display:inline-block;background:var(--warn-bg);color:var(--warn-ink);font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:12px}
 
+/* kebenaran PWS */
+.trust{display:inline-flex;align-items:center;gap:10px;min-height:48px;margin-top:22px;padding:8px 18px;border-radius:12px;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.6);color:#F4E7B8;font-weight:600;font-size:15px;text-decoration:none}
+.trust:hover{background:rgba(212,175,55,.26);color:#fff}
+.trust svg{flex:none}
+.auth{margin-top:28px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.6);padding:28px}
+.auth h3{font-size:clamp(20px,3vw,26px);color:#fff}
+.auth .lead{color:#EDE7D3;margin:10px 0 0;max-width:68ch}
+.auth dl{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:12px 22px;margin:20px 0 0}
+.auth dt{color:var(--gold-bright);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.auth dd{margin:0;color:#fff}
+.auth .fine{margin:18px 0 0;font-size:15px;color:#D8D2BD}
+
 /* jawatankuasa */
 .org{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:26px}
 .role{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:center}
@@ -153,6 +165,8 @@ footer p{margin:0;max-width:62ch}
 
 @media (max-width:860px){
   .split,.give{grid-template-columns:1fr}
+  .auth dl{grid-template-columns:1fr;gap:2px}
+  .auth dd{margin-bottom:14px}
   .burger{display:inline-flex;align-items:center}
   .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);flex-direction:column;padding:8px 20px 16px;border-top:1px solid rgba(255,255,255,.15)}
   .menu.open{display:flex}
@@ -174,7 +188,7 @@ footer p{margin:0;max-width:62ch}
 <body>
 <a class="skip" href="#kandungan">Langkau ke kandungan</a>
 
-<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Maklumat kutipan dan akaun wakaf belum dimuktamadkan.</div>
+<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Akaun wakaf, DuitNow QR dan jumlah kutipan belum dimuktamadkan.</div>
 
 <header class="nav">
   <div class="wrap">
@@ -207,6 +221,10 @@ footer p{margin:0;max-width:62ch}
       <a class="btn primary" href="#reka-bentuk">Lihat reka bentuk</a>
       <a class="btn ghost" href="#wakaf">Cara menyumbang</a>
     </div>
+    <a class="trust" href="#kebenaran">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#D4AF37" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Kutipan Wakaf Khas dibenarkan Perbadanan Wakaf Selangor hingga 31 Disember 2027</span>
+    </a>
   </div>
   <div class="wrap">
     <div class="stats">
@@ -334,6 +352,18 @@ footer p{margin:0;max-width:62ch}
       <div class="card"><h3>4. Wakaf tunai</h3><p>Wakaf tunai dan sumbangan individu.</p></div>
       <div class="card"><h3>5. Kempen komuniti</h3><p>Program komuniti dan media sosial.</p></div>
     </div>
+    <div class="auth" id="kebenaran">
+      <h3>Kutipan Wakaf Khas telah mendapat kebenaran rasmi</h3>
+      <p class="lead">Perbadanan Wakaf Selangor (PWS), di bawah Majlis Agama Islam Selangor, bersetuju memberi kebenaran kepada Jawatankuasa Pembinaan Masjid U12 untuk mengutip Dana Wakaf Khas.</p>
+      <dl>
+        <dt>Pemberi kebenaran</dt><dd>Perbadanan Wakaf Selangor (PWS)</dd>
+        <dt>Tujuan kutipan</dt><dd>Pembinaan Masjid U12, Shah Alam, Selangor sahaja</dd>
+        <dt>Tempoh kebenaran</dt><dd>Sehingga 31 Disember 2027</dd>
+        <dt>Tarikh surat</dt><dd>19 Oktober 2026</dd>
+        <dt>Resit rasmi</dt><dd>Resit PWS hanya ditulis dan ditandatangani oleh pemegang amanah yang dibenarkan PWS: Pengerusi, Timbalan Pengerusi, Setiausaha, Bendahari dan seorang Ahli Jawatankuasa</dd>
+      </dl>
+      <p class="fine">Pemegang amanah dikehendaki mematuhi semua peraturan Kutipan Wakaf Khas yang ditetapkan oleh PWS.</p>
+    </div>
     <div class="give">
       <div class="card status">
         <span class="pill">Akan dikemas kini</span>
@@ -371,7 +401,7 @@ footer p{margin:0;max-width:62ch}
           <li>Mengawal selia kemajuan projek sehingga siap</li>
         </ul></div>
     </div>
-    <p class="approval"><b>Kelulusan JAIS:</b> senarai ahli jawatankuasa telah diluluskan menurut surat rujukan JAI.Sel.BPM/01/018/1(25).</p>
+    <p class="approval"><b>Kelulusan JAIS:</b> senarai ahli jawatankuasa telah diluluskan menurut surat rujukan JAI.Sel.BPM/01/018/1(25). <b>Kebenaran PWS:</b> kutipan Wakaf Khas dibenarkan sehingga 31 Disember 2027, untuk pembinaan Masjid U12 sahaja.</p>
   </div>
 </section>
 </main>
