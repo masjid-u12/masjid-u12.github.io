@@ -150,6 +150,21 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .auth dd{margin:0;color:#fff}
 .auth .fine{margin:18px 0 0;font-size:15px;color:#D8D2BD}
 
+/* DuitNow QR */
+.pay{margin-top:28px;display:grid;grid-template-columns:minmax(230px,330px) 1fr;gap:36px;align-items:center;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:32px}
+.pay .tile{background:#fff;border:3px solid var(--gold-bright);border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.pay .tile img{width:100%;height:auto;aspect-ratio:1/1;display:block}
+.pay .kicker{color:var(--gold)}
+.pay h3{font-size:clamp(22px,3.2vw,30px);color:var(--slate);margin-bottom:8px}
+.pay .sub{color:var(--muted);margin:0 0 18px}
+.steps{list-style:none;counter-reset:s;margin:0 0 20px;padding:0;display:grid;gap:12px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--slate);color:var(--gold-bright);font:700 16px var(--head);display:flex;align-items:center;justify-content:center}
+.payee{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--cream);border:1px solid var(--line);font-size:15px;color:var(--slate);margin:0 0 18px}
+.payee b{font-family:var(--head);letter-spacing:.02em}
+.pay .btn.primary{background:var(--slate);color:#fff}
+.pay .btn.primary:hover{background:var(--ink)}
+
 /* jawatankuasa */
 .org{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:26px}
 .role{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:center}
@@ -165,6 +180,8 @@ footer p{margin:0;max-width:62ch}
 
 @media (max-width:860px){
   .split,.give{grid-template-columns:1fr}
+  .pay{grid-template-columns:1fr;gap:24px;padding:24px 20px}
+  .pay .tile{max-width:320px;width:100%;margin:0 auto}
   .auth dl{grid-template-columns:1fr;gap:2px}
   .auth dd{margin-bottom:14px}
   .burger{display:inline-flex;align-items:center}
@@ -188,7 +205,7 @@ footer p{margin:0;max-width:62ch}
 <body>
 <a class="skip" href="#kandungan">Langkau ke kandungan</a>
 
-<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Akaun wakaf, DuitNow QR dan jumlah kutipan belum dimuktamadkan.</div>
+<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Nombor akaun, jumlah kutipan dan hubungan urusetia belum dimuktamadkan.</div>
 
 <header class="nav">
   <div class="wrap">
@@ -364,11 +381,26 @@ footer p{margin:0;max-width:62ch}
       </dl>
       <p class="fine">Pemegang amanah dikehendaki mematuhi semua peraturan Kutipan Wakaf Khas yang ditetapkan oleh PWS.</p>
     </div>
+    <div class="pay" id="qr">
+      <div class="tile"><img src="img/duitnow-qr.svg" alt="Kod DuitNow QR untuk menyumbang kepada Pembinaan Masjid U12" width="400" height="400"></div>
+      <div>
+        <p class="kicker">DuitNow QR</p>
+        <h3>Sumbang dengan mengimbas</h3>
+        <p class="sub">Boleh digunakan dengan kebanyakan aplikasi perbankan dan e-dompet di Malaysia.</p>
+        <ol class="steps">
+          <li><span>Buka aplikasi bank atau e-dompet dan pilih <b>Imbas QR</b> atau <b>DuitNow QR</b>.</span></li>
+          <li><span>Imbas kod ini. Jika anda membuka laman ini di telefon yang sama, muat turun imej QR dan muat naiknya ke aplikasi.</span></li>
+          <li><span>Semak nama penerima, masukkan jumlah sumbangan dan sahkan.</span></li>
+        </ol>
+        <p class="payee">Nama penerima: <b>Pembinaan Masjid U12 Caha…</b> (nama mungkin dipaparkan terpotong oleh aplikasi bank)</p>
+        <div class="btns"><a class="btn primary" href="img/duitnow-qr.png" download="DuitNow-QR-Masjid-U12.png">Muat turun imej QR</a></div>
+      </div>
+    </div>
     <div class="give">
       <div class="card status">
         <span class="pill">Akan dikemas kini</span>
-        <h3>Akaun wakaf dan DuitNow QR</h3>
-        <p>Nombor akaun, DuitNow QR dan jumlah kutipan akan dipaparkan di sini selepas dimuktamadkan oleh jawatankuasa.</p>
+        <h3>Nombor akaun dan jumlah kutipan</h3>
+        <p>Nombor akaun bank dan jumlah kutipan akan dipaparkan di sini selepas dimuktamadkan oleh jawatankuasa.</p>
       </div>
       <div class="card status">
         <span class="pill">Akan dikemas kini</span>
