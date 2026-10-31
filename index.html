@@ -101,23 +101,23 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdr
 .stat{background:rgba(27,40,48,.82);padding:18px 20px}
 .stat b{display:block;font-family:var(--head);font-size:clamp(22px,3.4vw,32px);color:var(--gold-bright);line-height:1.1}
 .stat span{font-size:14px;color:#D8D2BD}
-.fund{position:relative;z-index:2;margin-top:26px;padding:22px 26px;border:2px solid var(--gold-bright);border-radius:var(--radius);background:rgba(27,40,48,.86);backdrop-filter:blur(3px)}
-.fund .fl{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
-.fund .frow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:8px}
-.fund .fnow{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05;color:var(--gold-bright)}
-.fund .fof{font-size:clamp(15px,2vw,18px);color:#EDE7D3}
-.fund .fof b{font-family:var(--head);font-size:1.25em;color:#FF9A2E}
-.stat b.target{color:#FF9A2E}
-.fund .ftrack{height:16px;margin-top:14px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
+.hero > .wrap:first-of-type{padding-top:24px}
+.fund{position:relative;z-index:2;margin:0 0 28px;padding:14px 20px 16px;border:2px solid var(--gold-bright);border-radius:var(--radius);background:rgba(27,40,48,.86);backdrop-filter:blur(3px);animation:fundBlink 1.8s ease-in-out infinite}
+@keyframes fundBlink{0%,100%{border-color:#D4AF37;box-shadow:0 0 0 0 rgba(212,175,55,0)}50%{border-color:#F6DE86;box-shadow:0 0 0 5px rgba(212,175,55,.28),0 0 24px rgba(212,175,55,.5)}}
+.fund .ftop{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 24px}
+.fund .fl{margin:0;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.fund .frow{margin-top:2px}
+.fund .fnow{font-family:var(--head);font-weight:700;font-size:clamp(24px,4.4vw,32px);line-height:1.1;color:var(--gold-bright)}
+.fund .fbud{font-size:14px;color:#D8D2BD}
+.fund .fbud b{font-family:var(--head);font-weight:700;font-size:clamp(24px,4.4vw,32px);line-height:1.1;color:#fff}
+.fund .ftrack{height:10px;margin-top:10px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
 .fund .ftrack i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));transition:width .9s ease}
-.fund .fmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:10px;font-size:15px;color:#D8D2BD}
+.fund .fmeta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px;margin-top:10px;font-size:14px;color:#D8D2BD}
 .fund .fmeta b{color:#fff}
-.fund .fmeta{align-items:baseline}
-.fund .fmeta #fundLeft b{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05}
-.fund .fcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:16px}
-.fund .fcta .btn{margin:0}
-.fund .fnote{font-size:14px;color:#D8D2BD}
-@media (prefers-reduced-motion:reduce){.fund .ftrack i{transition:none}}
+.fund .fcta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.fund .fcta .btn{margin:0;width:auto;min-height:40px;padding:0 18px;font-size:14px}
+.fund .fnote{font-size:13px;color:#D8D2BD}
+@media (prefers-reduced-motion:reduce){.fund{animation:none;box-shadow:0 0 18px rgba(212,175,55,.35)}.fund .ftrack i{transition:none}}
 
 
 /* hadis */
@@ -366,6 +366,17 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
 <section class="hero" style="padding:0">
   <img src="img/hero.jpg" alt="Lukisan arkitek pandangan masjid dari jalan masuk utama dengan kubah emas dan fasad berukir" data-en-alt="Architect's drawing of the mosque seen from the main entrance road, with a golden dome and carved façade" fetchpriority="high">
   <div class="wrap">
+    <section class="fund" id="kutipan" aria-labelledby="fundl">
+      <div class="ftop">
+        <div>
+          <p class="fl" id="fundl" data-en="Latest contributions">Kutipan terkini</p>
+          <div class="frow"><span class="fnow" id="fundNow">—</span></div>
+        </div>
+        <div class="fbud" id="fundLeft"></div>
+      </div>
+      <div class="ftrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fundBar"><i id="fundFill"></i></div>
+      <div class="fmeta"><span id="fundPct"></span><div class="fcta"><span class="fnote" id="fundNote"></span><a class="btn primary" href="#wakaf" data-en="Contribute now">Berwakaf sekarang</a></div></div>
+    </section>
     <p class="eyebrow" data-en="Proposed Construction">Cadangan Pembinaan</p>
     <h1>Masjid <span>U12</span> Cahaya Alam</h1>
     <p class="tagline" data-en="Building the House of Allah, Uniting the Ummah">Membina Rumah Allah, Menyatukan Ummah</p>
@@ -382,13 +393,6 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
       <div class="stat"><b data-en="3 levels">3 aras</b><span data-en="Including service level">Termasuk aras servis</span></div>
       <div class="stat"><b class="target" data-en="RM30.95 million">RM30.95 juta</b><span data-en="Estimated total project cost">Anggaran kos keseluruhan</span></div>
     </div>
-    <section class="fund" id="kutipan" aria-labelledby="fundl">
-      <p class="fl" id="fundl" data-en="Latest contributions">Kutipan terkini</p>
-      <div class="frow"><span class="fnow" id="fundNow">—</span></div>
-      <div class="ftrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fundBar"><i id="fundFill"></i></div>
-      <div class="fmeta"><span id="fundPct"></span><span id="fundLeft"></span></div>
-      <div class="fcta"><a class="btn primary" href="#wakaf" data-en="Contribute now">Berwakaf sekarang</a><span class="fnote" id="fundNote"></span></div>
-    </section>
     <p class="herocta" data-en="Together, we can help establish a mosque that serves not only as a place of worship, but also as a centre for knowledge, welfare and stronger community ties.">Bersama-sama kita menjayakan pembinaan sebuah masjid yang bukan sahaja menjadi tempat menunaikan ibadah, malah berperanan sebagai pusat ilmu, kebajikan dan pengukuhan ukhuwah masyarakat.</p>
   </div>
 </section>
