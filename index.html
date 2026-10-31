@@ -168,14 +168,18 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .payee b{font-family:var(--head);letter-spacing:.02em}
 .pay .btn.primary{background:var(--slate);color:#fff}
 .pay .btn.primary:hover{background:var(--ink)}
-.pay .info{margin:0 0 20px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.pay .info h4{margin:0 0 6px;font:700 13px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
-.pay .info dl{display:grid;grid-template-columns:110px 1fr;gap:4px 14px;margin:0}
-.pay .info dt{color:var(--muted);font-size:15px}
-.pay .info dd{margin:0;font-weight:600;color:var(--slate)}
-.pay .info .acct{font-family:var(--head);font-size:clamp(18px,2.6vw,22px);letter-spacing:.06em}
-.pay .info ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.pay .info a{font-weight:700;color:var(--slate)}
+.pay .info{margin:0 0 20px;display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius);background:linear-gradient(135deg,#1F5148,#143A33);border:2px solid var(--gold-bright);color:#fff;overflow:hidden}
+.pay .info > div{padding:22px 24px}
+.pay .info > div + div{border-left:1px solid rgba(212,175,55,.55)}
+.pay .info h4{display:flex;align-items:center;gap:10px;margin:0 0 14px;font:700 14px var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft)}
+.pay .info h4 svg{flex:none}
+.pay .info dl{display:grid;grid-template-columns:96px 1fr;gap:6px 14px;margin:0}
+.pay .info dt{color:#C9E0DA;font-size:15px}
+.pay .info dd{margin:0;font-weight:700;color:#fff}
+.pay .info .acct{font-family:var(--head);font-size:clamp(20px,2.8vw,26px);letter-spacing:.06em;color:var(--gold-bright)}
+.pay .info ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pay .info li{color:#E6F0ED}
+.pay .info a{font-weight:800;font-size:19px;color:#fff;text-decoration-color:var(--gold-bright)}
 .pay .taxnote{margin:0 0 18px;padding:14px 16px;border-radius:10px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.6);color:var(--slate);font-size:15px}
 .pay .taxnote b{display:block;font-family:var(--head);margin-bottom:4px}
 
@@ -199,6 +203,7 @@ footer p{margin:0;max-width:62ch}
   .pay .tile{max-width:320px;width:100%;margin:0 auto}
   .pay .qrcol{max-width:320px;width:100%;margin:0 auto}
   .pay .info{grid-template-columns:1fr}
+  .pay .info > div + div{border-left:0;border-top:1px solid rgba(212,175,55,.55)}
   .auth dl{grid-template-columns:1fr;gap:2px}
   .auth dd{margin-bottom:14px}
   .burger{display:inline-flex;align-items:center}
@@ -418,7 +423,7 @@ footer p{margin:0;max-width:62ch}
       <div class="paymore">
         <div class="info">
           <div>
-            <h4>Maklumat akaun bank</h4>
+            <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M7 11a5 5 0 0 1 10 0"/><path d="M4 21V11h3M20 21V11h-3M3 21h18M9 21v-5a3 3 0 0 1 6 0v5"/></svg>Maklumat akaun bank</h4>
             <dl>
               <dt>Nama akaun</dt><dd>Pembinaan Masjid U12 Cahaya Alam</dd>
               <dt>Bank</dt><dd>Bank Islam</dd>
@@ -426,7 +431,7 @@ footer p{margin:0;max-width:62ch}
             </dl>
           </div>
           <div>
-            <h4>Sila hubungi kami</h4>
+            <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Sila hubungi kami</h4>
             <ul>
               <li><a href="tel:+60172208466">017-220 8466</a> (Capt. Maghzan)</li>
               <li><a href="tel:+60122569239">012-256 9239</a> (Hj. Fakhruddin)</li>
