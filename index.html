@@ -93,7 +93,7 @@ h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:16px}
 .fact span{color:var(--muted)}
 
 /* galeri */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:30px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
 .shot{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .shot button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .shot img{width:100%;aspect-ratio:16/10;object-fit:cover}
@@ -180,6 +180,7 @@ footer p{margin:0;max-width:62ch}
 
 @media (max-width:860px){
   .split,.give{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
   .pay{grid-template-columns:1fr;gap:24px;padding:24px 20px}
   .pay .tile{max-width:320px;width:100%;margin:0 auto}
   .auth dl{grid-template-columns:1fr;gap:2px}
@@ -194,6 +195,7 @@ footer p{margin:0;max-width:62ch}
 @media (max-width:520px){
   body{font-size:16px}
   .btn{width:100%}
+  .gallery{grid-template-columns:1fr}
   .hero .wrap{padding-top:56px}
   .cost th,.cost td{padding:12px 12px}
   .cost td.num{font-size:15px}
@@ -277,12 +279,12 @@ footer p{margin:0;max-width:62ch}
     <div class="gallery">
       <figure class="shot wide"><button type="button" data-full="img/udara.jpg" data-cap="Pandangan udara keseluruhan tapak"><img src="img/udara.jpg" alt="Pandangan udara masjid, tempat letak kereta dan landskap" loading="lazy"></button><figcaption>Pandangan udara keseluruhan tapak</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/hadapan.jpg" data-cap="Pandangan dari jalan masuk utama"><img src="img/hadapan.jpg" alt="Bahagian hadapan masjid dengan serambi bertiang putih" loading="lazy"></button><figcaption>Pandangan dari jalan masuk utama</figcaption></figure>
-      <figure class="shot"><button type="button" data-full="img/pintu-masuk.jpg" data-cap="Ruang masuk utama masjid"><img src="img/pintu-masuk.jpg" alt="Ruang masuk utama dengan siling kayu berukir dan bumbung kaca" loading="lazy"></button><figcaption>Ruang masuk utama masjid</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/fasad.jpg" data-cap="Fasad berukir motif geometri Islam"><img src="img/fasad.jpg" alt="Fasad berpanel ukiran geometri dan kawasan letak kereta" loading="lazy"></button><figcaption>Fasad berukir motif geometri Islam</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/sayap.jpg" data-cap="Bangunan sayap dan laluan pejalan kaki"><img src="img/sayap.jpg" alt="Sayap bangunan dua tingkat dengan beranda" loading="lazy"></button><figcaption>Bangunan sayap dan laluan pejalan kaki</figcaption></figure>
-      <figure class="shot"><button type="button" data-full="img/dewan.jpg" data-cap="Ruang legar dan ruang limpah solat"><img src="img/dewan.jpg" alt="Ruang dalaman luas dengan tiang putih dan tingkap besar" loading="lazy"></button><figcaption>Ruang legar dan ruang limpah solat</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/shading.jpg" data-cap="Peranti pelindung matahari pada fasad"><img src="img/shading.jpg" alt="Panel pelindung matahari berukir pada fasad masjid" loading="lazy"></button><figcaption>Peranti pelindung matahari pada fasad</figcaption></figure>
-      <figure class="shot"><button type="button" data-full="img/tampak.jpg" data-cap="Tampak hadapan"><img src="img/tampak.jpg" alt="Lukisan tampak hadapan masjid dengan kubah dan menara" loading="lazy"></button><figcaption>Tampak hadapan</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/pintu-masuk.jpg" data-cap="Ruang masuk utama masjid"><img src="img/pintu-masuk.jpg" alt="Ruang masuk utama dengan siling kayu berukir dan bumbung kaca" loading="lazy"></button><figcaption>Ruang masuk utama masjid</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/dewan.jpg" data-cap="Ruang legar dan ruang limpah solat"><img src="img/dewan.jpg" alt="Ruang dalaman luas dengan tiang putih dan tingkap besar" loading="lazy"></button><figcaption>Ruang legar dan ruang limpah solat</figcaption></figure>
+      <figure class="shot wide"><button type="button" data-full="img/tampak.jpg" data-cap="Tampak hadapan"><img src="img/tampak.jpg" alt="Lukisan tampak hadapan masjid dengan kubah dan menara" loading="lazy"></button><figcaption>Tampak hadapan</figcaption></figure>
     </div>
   </div>
 </section>
