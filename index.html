@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pembinaan Masjid U12, Cahaya Alam, Shah Alam</title>
+<meta name="description" content="Cadangan pembinaan Masjid U12 di Cahaya Alam, Seksyen U12, Shah Alam: reka bentuk, kemudahan, anggaran kos dan jawatankuasa penaja.">
+<meta property="og:title" content="Pembinaan Masjid U12, Cahaya Alam">
+<meta property="og:description" content="Masjid kontemporari minimalis berkapasiti 4,000 jemaah di Seksyen U12, Shah Alam.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B2830;
+  --slate:#26363F;
+  --slate-2:#33464F;
+  --gold:#B38A1F;
+  --gold-soft:#E9D7A0;
+  --gold-bright:#D4AF37;
+  --cream:#F6F3EC;
+  --paper:#FFFFFF;
+  --line:#E2DCCB;
+  --muted:#58656C;
+  --warn-bg:#FFF4D6;
+  --warn-ink:#6B4A00;
+  --head:"Montserrat","Segoe UI",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--cream);-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:var(--slate-2)}
+h1,h2,h3{font-family:var(--head);line-height:1.2;margin:0}
+p{margin:0 0 1em}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold-bright);color:var(--ink);padding:10px 16px;border-radius:8px;font-weight:700;z-index:100}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:6px}
+
+/* jalur contoh */
+.mock{background:var(--warn-bg);color:var(--warn-ink);font-size:14px;font-weight:600;text-align:center;padding:8px 16px;border-bottom:1px solid #E8D49A}
+.mock strong{letter-spacing:.08em}
+
+/* navigasi */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdrop-filter:blur(6px);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:var(--head);font-weight:700;font-size:15px;letter-spacing:.04em}
+.brand img{width:42px;height:42px;border-radius:50%;background:#fff;padding:2px;object-fit:contain}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{display:inline-flex;align-items:center;min-height:48px;padding:0 12px;color:#EDE7D3;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px}
+.menu a:hover{background:rgba(255,255,255,.1);color:#fff}
+.burger{display:none;min-height:48px;min-width:48px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:10px;font:600 15px var(--body);padding:0 14px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--ink);overflow:hidden}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,40,48,.35) 0%,rgba(27,40,48,.92) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:84px;padding-bottom:40px}
+.eyebrow{font-family:var(--head);font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+.hero h1{font-size:clamp(32px,6.2vw,60px);font-weight:800;max-width:15ch}
+.hero h1 span{color:var(--gold-bright)}
+.hero .lede{max-width:56ch;font-size:clamp(17px,2.2vw,20px);color:#EDE7D3;margin:18px 0 8px}
+.hero .place{font-weight:600;color:#fff;margin-bottom:26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:12px;font-family:var(--head);font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--gold-bright);color:var(--ink)}
+.btn.primary:hover{background:#E2BE4D}
+.btn.ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.18);margin-top:34px}
+.stat{background:rgba(27,40,48,.82);padding:18px 20px}
+.stat b{display:block;font-family:var(--head);font-size:clamp(22px,3.4vw,32px);color:var(--gold-bright);line-height:1.1}
+.stat span{font-size:14px;color:#D8D2BD}
+
+/* seksyen */
+section{padding:68px 0}
+section.alt{background:var(--paper)}
+section.dark{background:var(--slate);color:#fff}
+.kicker{font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.dark .kicker{color:var(--gold-bright)}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:16px}
+.intro{max-width:64ch;color:var(--muted);font-size:18px}
+.dark .intro{color:#D8D2BD}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.facts{display:grid;gap:14px}
+.fact{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--gold-bright);border-radius:var(--radius);padding:18px 20px}
+.fact b{display:block;font-family:var(--head);font-size:26px;color:var(--slate)}
+.fact span{color:var(--muted)}
+
+/* galeri */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:30px}
+.shot{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.shot button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.shot img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.shot figcaption{padding:12px 14px;font-size:15px;font-weight:600;color:var(--slate)}
+.shot.wide{grid-column:1/-1}
+.shot.wide img{aspect-ratio:21/9}
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);width:100%}
+dialog::backdrop{background:rgba(10,16,20,.88)}
+dialog .box{position:relative}
+dialog img{width:100%;max-height:82vh;object-fit:contain;border-radius:10px;background:#111}
+dialog p{color:#fff;text-align:center;margin:10px 0 0;font-weight:600}
+dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px;border:0;border-radius:10px;background:var(--gold-bright);color:var(--ink);font:700 16px var(--body);cursor:pointer}
+
+/* konsep */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.dark .card{background:var(--slate-2);border-color:rgba(255,255,255,.14)}
+.card h3{font-size:18px;margin-bottom:8px;color:var(--slate)}
+.dark .card h3{color:var(--gold-bright)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.dark .card p{color:#D8D2BD}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:16px}
+.dark .card ul{color:#D8D2BD}
+.card li{margin:4px 0}
+.card .tag{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--gold)}
+
+/* kos */
+.cost{margin-top:28px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.cost table{width:100%;border-collapse:collapse}
+.cost th,.cost td{padding:14px 18px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.cost th{font-family:var(--head);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#FAF8F2}
+.cost td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.cost .bar{display:block;height:8px;border-radius:4px;background:#EFE9D8;margin-top:8px;overflow:hidden}
+.cost .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));width:0}
+.cost tfoot td{background:var(--slate);color:#fff;font-family:var(--head);font-weight:700;font-size:18px;border-bottom:0}
+.cost tfoot td.num{color:var(--gold-bright)}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+
+/* wakaf */
+.give{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.give .card.status{border:2px dashed var(--gold-bright);background:rgba(212,175,55,.08)}
+.give .card.status h3{color:var(--gold-bright)}
+.pill{display:inline-block;background:var(--warn-bg);color:var(--warn-ink);font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+
+/* jawatankuasa */
+.org{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:26px}
+.role{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:center}
+.role b{display:block;font-family:var(--head);font-size:30px;color:var(--gold)}
+.role span{font-weight:600;color:var(--slate)}
+.approval{margin-top:22px;padding:16px 20px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);color:var(--muted)}
+.approval b{color:var(--slate)}
+
+footer{background:var(--ink);color:#C9C3AE;padding:36px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer img{width:56px;height:56px;border-radius:50%;background:#fff;padding:3px}
+footer p{margin:0;max-width:62ch}
+
+@media (max-width:860px){
+  .split,.give{grid-template-columns:1fr}
+  .burger{display:inline-flex;align-items:center}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);flex-direction:column;padding:8px 20px 16px;border-top:1px solid rgba(255,255,255,.15)}
+  .menu.open{display:flex}
+  .nav .wrap{position:relative}
+  section{padding:52px 0}
+  .shot.wide img{aspect-ratio:16/10}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .btn{width:100%}
+  .hero .wrap{padding-top:56px}
+  .cost th,.cost td{padding:12px 12px}
+  .cost td.num{font-size:15px}
+  .brand span{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#kandungan">Langkau ke kandungan</a>
+
+<div class="mock" role="note"><strong>PAPARAN CONTOH</strong> · Maklumat kutipan dan akaun wakaf belum dimuktamadkan.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#atas" aria-label="Masjid U12, Cahaya Alam, ke atas">
+      <img src="img/logo.png" alt="" width="42" height="42">
+      <span>MASJID U12</span>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#mengapa">Mengapa</a></li>
+      <li><a href="#reka-bentuk">Reka Bentuk</a></li>
+      <li><a href="#kemudahan">Kemudahan</a></li>
+      <li><a href="#kos">Kos</a></li>
+      <li><a href="#wakaf">Sumbangan</a></li>
+      <li><a href="#jawatankuasa">Jawatankuasa</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="kandungan">
+<div id="atas"></div>
+<section class="hero" style="padding:0">
+  <img src="img/hero.jpg" alt="Lukisan arkitek pandangan masjid dari jalan masuk utama dengan kubah emas dan fasad berukir" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow">Cadangan Pembinaan</p>
+    <h1>Masjid <span>U12</span> Cahaya Alam</h1>
+    <p class="lede">Sebuah masjid kontemporari minimalis moden untuk komuniti Cahaya Alam, dirancang sebagai pusat ibadah, dakwah, pendidikan dan kebajikan.</p>
+    <p class="place">Cahaya Alam, Seksyen U12, Shah Alam, Selangor Darul Ehsan</p>
+    <div class="btns">
+      <a class="btn primary" href="#reka-bentuk">Lihat reka bentuk</a>
+      <a class="btn ghost" href="#wakaf">Cara menyumbang</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>4,000</b><span>kapasiti jemaah</span></div>
+      <div class="stat"><b>2.65 ekar</b><span>rizab masjid</span></div>
+      <div class="stat"><b>3 aras</b><span>termasuk aras servis</span></div>
+      <div class="stat"><b>RM30.95 juta</b><span>anggaran keseluruhan</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="mengapa" class="alt">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Keperluan</p>
+      <h2>Kawasan membangun, belum ada masjid utama</h2>
+      <p class="intro">Cahaya Alam di Seksyen U12 ialah kawasan kediaman yang pesat membangun, merangkumi Taman Cahaya Alam, Taman Desa Alam, Rumah Selangorku dan kawasan komersial serta perindustrian Bukit Raja berdekatan.</p>
+      <p>Penduduk dianggarkan akan melebihi 15,000 orang dan majoritinya beragama Islam. Surau An-Nur Cahaya Alam dan Surau Al-Amin Desa Alam sudah melebihi kapasiti, terutama pada solat Jumaat dan solat Tarawih. Pembinaan masjid ini dinyatakan sebagai keperluan mendesak.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>15,000+</b><span>anggaran penduduk, majoritinya Muslim</span></div>
+      <div class="fact"><b>±1,800 unit</b><span>Rumah Selangorku di kawasan ini</span></div>
+      <div class="fact"><b>2 surau</b><span>sedia ada, kedua-duanya melebihi kapasiti</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="reka-bentuk">
+  <div class="wrap">
+    <p class="kicker">Reka bentuk</p>
+    <h2>Lukisan arkitek cadangan</h2>
+    <p class="intro">Klik mana-mana gambar untuk melihatnya lebih besar. Semua gambar ialah lukisan cadangan dan bukan bangunan yang telah siap.</p>
+    <div class="gallery">
+      <figure class="shot wide"><button type="button" data-full="img/udara.jpg" data-cap="Pandangan udara keseluruhan tapak"><img src="img/udara.jpg" alt="Pandangan udara masjid, tempat letak kereta dan landskap" loading="lazy"></button><figcaption>Pandangan udara keseluruhan tapak</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/hadapan.jpg" data-cap="Pandangan dari jalan masuk utama"><img src="img/hadapan.jpg" alt="Bahagian hadapan masjid dengan serambi bertiang putih" loading="lazy"></button><figcaption>Pandangan dari jalan masuk utama</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/pintu-masuk.jpg" data-cap="Ruang masuk utama masjid"><img src="img/pintu-masuk.jpg" alt="Ruang masuk utama dengan siling kayu berukir dan bumbung kaca" loading="lazy"></button><figcaption>Ruang masuk utama masjid</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/fasad.jpg" data-cap="Fasad berukir motif geometri Islam"><img src="img/fasad.jpg" alt="Fasad berpanel ukiran geometri dan kawasan letak kereta" loading="lazy"></button><figcaption>Fasad berukir motif geometri Islam</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/sayap.jpg" data-cap="Bangunan sayap dan laluan pejalan kaki"><img src="img/sayap.jpg" alt="Sayap bangunan dua tingkat dengan beranda" loading="lazy"></button><figcaption>Bangunan sayap dan laluan pejalan kaki</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/dewan.jpg" data-cap="Ruang legar dan ruang limpah solat"><img src="img/dewan.jpg" alt="Ruang dalaman luas dengan tiang putih dan tingkap besar" loading="lazy"></button><figcaption>Ruang legar dan ruang limpah solat</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/shading.jpg" data-cap="Peranti pelindung matahari pada fasad"><img src="img/shading.jpg" alt="Panel pelindung matahari berukir pada fasad masjid" loading="lazy"></button><figcaption>Peranti pelindung matahari pada fasad</figcaption></figure>
+      <figure class="shot"><button type="button" data-full="img/tampak.jpg" data-cap="Tampak hadapan"><img src="img/tampak.jpg" alt="Lukisan tampak hadapan masjid dengan kubah dan menara" loading="lazy"></button><figcaption>Tampak hadapan</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="konsep">
+  <div class="wrap">
+    <p class="kicker">Konsep</p>
+    <h2>Moden, tenang dan sesuai iklim tropika</h2>
+    <p class="intro">Geometri ringkas dan tegas, tanpa hiasan klasik Arab atau Ottoman, dengan bahan yang jujur dan cahaya semula jadi yang banyak.</p>
+    <div class="cards">
+      <div class="card"><h3>Kontemporari minimalis</h3><p>Reka bentuk masjid konkrit berkapasiti 4,000 jemaah dengan garisan lurus dan bentuk kotak.</p></div>
+      <div class="card"><h3>Bahan utama</h3><ul><li>Konkrit terdedah</li><li>Kaca berlamina besar untuk cahaya semula jadi</li><li>Kayu tropika tempatan sebagai aksen</li></ul></div>
+      <div class="card"><h3>Bumbung rata</h3><p>Direka supaya ada ruang untuk bumbung hijau atau panel solar, dengan kecerunan kecil untuk aliran air hujan.</p></div>
+      <div class="card"><h3>Sesuai iklim Malaysia</h3><ul><li>Pengudaraan silang melalui bukaan tinggi</li><li>Elemen pelindung matahari (brise-soleil)</li><li>Lantai sejuk daripada batu atau jubin konkrit</li></ul></div>
+      <div class="card"><h3>Skema warna neutral</h3><p>Kelabu konkrit, putih dan beige, dengan aksen hitam matte dan kayu cerah.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kemudahan" class="alt">
+  <div class="wrap">
+    <p class="kicker">Kemudahan</p>
+    <h2>Lebih daripada sebuah tempat solat</h2>
+    <p class="intro">Masjid ini dirancang sebagai pusat komuniti dengan ruang ibadah, kuliah, urusan majlis dan aktiviti kemasyarakatan.</p>
+    <div class="cards">
+      <div class="card"><h3>Aras 1</h3>
+        <ul>
+          <li>Dewan solat utama dan mihrab</li>
+          <li>Ruang limpah dan ruang permainan kanak-kanak</li>
+          <li>Ruang wuduk, tandas dan tandas OKU (lelaki dan perempuan)</li>
+          <li>Bilik nikah, ruang makan dan bilik penyediaan jamuan</li>
+          <li>Bilik pengurusan jenazah</li>
+          <li>Ruang usahawan (kedai 1 hingga 4)</li>
+          <li>Ruang korban dan ruang melapah</li>
+        </ul><span class="tag">Keluasan lantai 3,708.13 m²</span></div>
+      <div class="card"><h3>Aras 2</h3>
+        <ul>
+          <li>Ruang solat dan ruang limpah solat</li>
+          <li>Dua bilik kuliah</li>
+          <li>Pejabat am, bilik mesyuarat dan ruang kaunter</li>
+          <li>Bilik imam, bilik nazir dan bilik VIP</li>
+          <li>Ruang wuduk</li>
+        </ul><span class="tag">Keluasan lantai 1,506.54 m²</span></div>
+      <div class="card"><h3>Aras servis dan luaran</h3>
+        <ul>
+          <li>Bilik VRF dan ruang terbuka aras servis</li>
+          <li>Menara (minaret)</li>
+          <li>Pondok pengawal, rumah pam dan rumah sampah</li>
+          <li>Taman permainan kanak-kanak dan gazebo</li>
+        </ul><span class="tag">Aras servis 787.49 m²</span></div>
+    </div>
+    <figure class="shot" style="margin-top:28px;max-width:760px">
+      <button type="button" data-full="img/pelan-tapak.jpg" data-cap="Pelan tapak cadangan"><img src="img/pelan-tapak.jpg" alt="Pelan tapak cadangan masjid dengan nombor ruang" width="1600" height="1428" loading="lazy" style="aspect-ratio:auto;height:auto"></button>
+      <figcaption>Pelan tapak cadangan</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="kos">
+  <div class="wrap">
+    <p class="kicker">Kos</p>
+    <h2>Anggaran kos pembinaan</h2>
+    <p class="intro">Anggaran keseluruhan projek ialah RM30,952,400. Angka ini akan disemak semula berdasarkan laporan perunding dan kelulusan pihak berkuasa.</p>
+    <div class="cost">
+      <table>
+        <thead><tr><th scope="col">Skop utama</th><th scope="col" style="text-align:right">Anggaran (RM)</th></tr></thead>
+        <tbody id="costBody"></tbody>
+        <tfoot><tr><td>Jumlah anggaran keseluruhan</td><td class="num" id="costTotal"></td></tr></tfoot>
+      </table>
+    </div>
+    <p class="note">Rujuk perincian kos sebenar dalam PDA (Preliminary Detail Abstract) dalam kertas kerja.</p>
+  </div>
+</section>
+
+<section id="wakaf" class="dark">
+  <div class="wrap">
+    <p class="kicker">Sumbangan</p>
+    <h2>Cara menyumbang</h2>
+    <p class="intro">Dana pembinaan dirancang daripada lima sumber berikut.</p>
+    <div class="cards">
+      <div class="card"><h3>1. Sumbangan orang ramai</h3><p>Tunai dan dalam talian.</p></div>
+      <div class="card"><h3>2. Derma korporat</h3><p>Syarikat dan badan-badan kebajikan.</p></div>
+      <div class="card"><h3>3. Sumbangan kerajaan</h3><p>Kerajaan negeri atau kerajaan persekutuan.</p></div>
+      <div class="card"><h3>4. Wakaf tunai</h3><p>Wakaf tunai dan sumbangan individu.</p></div>
+      <div class="card"><h3>5. Kempen komuniti</h3><p>Program komuniti dan media sosial.</p></div>
+    </div>
+    <div class="give">
+      <div class="card status">
+        <span class="pill">Akan dikemas kini</span>
+        <h3>Akaun wakaf dan DuitNow QR</h3>
+        <p>Nombor akaun, DuitNow QR dan jumlah kutipan akan dipaparkan di sini selepas dimuktamadkan oleh jawatankuasa.</p>
+      </div>
+      <div class="card status">
+        <span class="pill">Akan dikemas kini</span>
+        <h3>Hubungi urusetia</h3>
+        <p>Maklumat perhubungan urusetia akan dipaparkan di sini selepas disahkan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jawatankuasa" class="alt">
+  <div class="wrap">
+    <p class="kicker">Jawatankuasa</p>
+    <h2>Jawatankuasa Penaja Pembinaan Masjid Cahaya Alam</h2>
+    <p class="intro">Badan penggerak awal yang menyelaras permohonan, perancangan, kutipan dana dan pelaksanaan projek sehingga masjid siap dan diserahkan kepada Majlis Agama Islam Selangor (MAIS).</p>
+    <div class="org">
+      <div class="role"><b>1</b><span>Pengerusi</span></div>
+      <div class="role"><b>1</b><span>Timbalan Pengerusi</span></div>
+      <div class="role"><b>1</b><span>Setiausaha</span></div>
+      <div class="role"><b>1</b><span>Bendahari</span></div>
+      <div class="role"><b>9</b><span>Ahli Jawatankuasa</span></div>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Peranan jawatankuasa</h3>
+        <ul>
+          <li>Penghubung antara penduduk dengan pihak berkuasa agama dan kerajaan negeri</li>
+          <li>Menyediakan pelan cadangan dan kertas kerja lengkap</li>
+          <li>Menyelaras kelulusan tapak, pelan bangunan dan urusan teknikal</li>
+          <li>Menguruskan kutipan derma, sumbangan dan dana pembinaan</li>
+          <li>Mengawal selia kemajuan projek sehingga siap</li>
+        </ul></div>
+    </div>
+    <p class="approval"><b>Kelulusan JAIS:</b> senarai ahli jawatankuasa telah diluluskan menurut surat rujukan JAI.Sel.BPM/01/018/1(25).</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Logo Masjid U12 Cahaya Alam" width="56" height="56">
+    <p>Berdasarkan Kertas Kerja Cadangan Pembinaan Masjid U12, draf V1, Ogos 2026. Lukisan dan angka ialah cadangan dan tertakluk kepada kelulusan pihak berkuasa.</p>
+  </div>
+</footer>
+
+<dialog id="lb" aria-label="Paparan gambar besar">
+  <div class="box">
+    <button class="close" type="button" id="lbClose">Tutup</button>
+    <img id="lbImg" alt="">
+    <p id="lbCap"></p>
+  </div>
+</dialog>
+
+<script>
+/* Data kos pembinaan (RM), disalin daripada Kertas Kerja draf V1 (Ogos 2026).
+   Ubah angka di sini jika anggaran disemak semula.
+   PERHATIAN: jumlah sembilan baris di bawah = RM30,462,400, tetapi kertas kerja
+   menyatakan jumlah keseluruhan RM30,952,400 (beza RM490,000). Semak dengan perunding. */
+var KOS = [
+  ["1. Preliminaries (6% daripada Builders Works)", 1361000],
+  ["2. Piling / Foundation", 924000],
+  ["3. Building", 14724400],
+  ["4. Service (M&E Works)", 4417300],
+  ["5. External Works", 2120000],
+  ["6. Provisional Sum", 2500000],
+  ["7. Supervision (2% daripada kos pembinaan)", 530700],
+  ["8. Kos Perunding dan Pentadbiran (8%)", 2123000],
+  ["9. Sales and Service Tax (SST @ 8%)", 1762000]
+];
+var JUMLAH = 30952400;
+
+function fmt(n){ return "RM" + n.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
+(function(){
+  var body = document.getElementById("costBody");
+  var max = Math.max.apply(null, KOS.map(function(k){return k[1];}));
+  KOS.forEach(function(k){
+    var tr = document.createElement("tr");
+    var a = document.createElement("td");
+    var label = document.createElement("span"); label.textContent = k[0];
+    var bar = document.createElement("span"); bar.className = "bar"; bar.setAttribute("aria-hidden","true");
+    var fill = document.createElement("i"); fill.style.width = Math.max(2, Math.round(k[1]/max*100)) + "%";
+    bar.appendChild(fill); a.appendChild(label); a.appendChild(bar);
+    var b = document.createElement("td"); b.className = "num"; b.textContent = fmt(k[1]);
+    tr.appendChild(a); tr.appendChild(b); body.appendChild(tr);
+  });
+  document.getElementById("costTotal").textContent = fmt(JUMLAH);
+
+  var burger = document.getElementById("burger"), menu = document.getElementById("menu");
+  burger.addEventListener("click", function(){
+    var open = menu.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menu.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ menu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+  });
+
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
+  document.querySelectorAll("[data-full]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      lbImg.src = btn.getAttribute("data-full");
+      lbImg.alt = btn.getAttribute("data-cap") || "";
+      lbCap.textContent = btn.getAttribute("data-cap") || "";
+      if(lb.showModal){ lb.showModal(); } else { lb.setAttribute("open",""); }
+    });
+  });
+  document.getElementById("lbClose").addEventListener("click", function(){ lb.close ? lb.close() : lb.removeAttribute("open"); });
+  lb.addEventListener("click", function(e){ if(e.target === lb){ lb.close(); } });
+})();
+</script>
+</body>
+</html>
