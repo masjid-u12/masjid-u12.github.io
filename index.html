@@ -112,6 +112,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdr
 .fund .ftrack i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));transition:width .9s ease}
 .fund .fmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:10px;font-size:15px;color:#D8D2BD}
 .fund .fmeta b{color:#fff}
+.fund .fmeta{align-items:baseline}
+.fund .fmeta #fundLeft b{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05}
 .fund .fcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:16px}
 .fund .fcta .btn{margin:0}
 .fund .fnote{font-size:14px;color:#D8D2BD}
@@ -734,7 +736,7 @@ function renderFund(){
   var p = Math.min(100, K / T * 100);
   now.textContent = "RM" + K.toLocaleString("en-MY");
   pct.innerHTML = "<b>" + p.toFixed(2) + "%</b> " + (en ? "reached" : "tercapai");
-  left.innerHTML = (en ? "Still needed: " : "Baki diperlukan: ") + "<b>RM" + Math.max(0, T - K).toLocaleString("en-MY") + "</b>";
+  left.innerHTML = (en ? "Total Budget: " : "Bajet Keseluruhan: ") + "<b>RM" + T.toLocaleString("en-MY") + "</b>";
   note.textContent = KUTIPAN_TARIKH ? (en ? "As at " : "Setakat ") + KUTIPAN_TARIKH[en?1:0] : "";
   bar.setAttribute("aria-valuenow", String(Math.round(p)));
   requestAnimationFrame(function(){ fill.style.width = Math.max(p, 1.5) + "%"; });
