@@ -382,7 +382,7 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
     </div>
     <section class="fund" id="kutipan" aria-labelledby="fundl">
       <p class="fl" id="fundl" data-en="Latest contributions">Kutipan terkini</p>
-      <div class="frow"><span class="fnow" id="fundNow">—</span><span class="fof" id="fundOf"></span></div>
+      <div class="frow"><span class="fnow" id="fundNow">—</span></div>
       <div class="ftrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fundBar"><i id="fundFill"></i></div>
       <div class="fmeta"><span id="fundPct"></span><span id="fundLeft"></span></div>
       <div class="fcta"><a class="btn primary" href="#wakaf" data-en="Contribute now">Berwakaf sekarang</a><span class="fnote" id="fundNote"></span></div>
@@ -721,11 +721,10 @@ function fmt(n){ return "RM" + n.toLocaleString("en-US", {minimumFractionDigits:
 var KUTIPAN = 22000, KUTIPAN_TARIKH = ["31 Okt 2026","31 Oct 2026"];
 function renderFund(){
   var en = LANG === "en", T = JUMLAH, K = KUTIPAN;
-  var now = document.getElementById("fundNow"), of = document.getElementById("fundOf");
+  var now = document.getElementById("fundNow");
   var pct = document.getElementById("fundPct"), left = document.getElementById("fundLeft");
   var note = document.getElementById("fundNote"), fill = document.getElementById("fundFill");
   var bar = document.getElementById("fundBar");
-  of.innerHTML = (en ? "of " : "daripada ") + "<b>RM" + T.toLocaleString("en-MY") + "</b>" + (en ? " needed" : " diperlukan");
   if (K === null) {
     now.textContent = en ? "To be updated" : "Akan dikemas kini";
     pct.textContent = ""; left.textContent = "";
