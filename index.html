@@ -576,9 +576,9 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
     </div>
     <div class="give">
       <div class="card status" style="grid-column:1/-1">
-        <span class="pill" data-en="To be updated">Akan dikemas kini</span>
+        <span class="pill" data-en="Updated">Dikemas kini</span>
         <h3 data-en="Total Contributions Collected">Jumlah Kutipan</h3>
-        <p data-en="The total amount collected will be updated and displayed on this page once it has been finalised by the Committee.">Maklumat jumlah kutipan akan dikemas kini dan dipaparkan di laman ini selepas dimuktamadkan oleh pihak jawatankuasa.</p>
+        <p id="fundCard" data-en="Latest contributions: RM22,000 of RM30,952,400 needed (as at 31 Oct 2026).">Kutipan terkini: RM22,000 daripada RM30,952,400 diperlukan (setakat 31 Okt 2026).</p>
       </div>
     </div>
   </div>
@@ -716,7 +716,7 @@ function fmt(n){ return "RM" + n.toLocaleString("en-US", {minimumFractionDigits:
 
 
 /* Kutipan terkini: kemas kini dua nilai ini sahaja (RM, nombor). null = belum dimuktamadkan. */
-var KUTIPAN = null, KUTIPAN_TARIKH = "";
+var KUTIPAN = 22000, KUTIPAN_TARIKH = ["31 Okt 2026","31 Oct 2026"];
 function renderFund(){
   var en = LANG === "en", T = JUMLAH, K = KUTIPAN;
   var now = document.getElementById("fundNow"), of = document.getElementById("fundOf");
@@ -732,11 +732,11 @@ function renderFund(){
   }
   var p = Math.min(100, K / T * 100);
   now.textContent = "RM" + K.toLocaleString("en-MY");
-  pct.innerHTML = "<b>" + p.toFixed(1) + "%</b> " + (en ? "reached" : "tercapai");
+  pct.innerHTML = "<b>" + p.toFixed(2) + "%</b> " + (en ? "reached" : "tercapai");
   left.innerHTML = (en ? "Still needed: " : "Baki diperlukan: ") + "<b>RM" + Math.max(0, T - K).toLocaleString("en-MY") + "</b>";
-  note.textContent = KUTIPAN_TARIKH ? (en ? "As at " : "Setakat ") + KUTIPAN_TARIKH : "";
+  note.textContent = KUTIPAN_TARIKH ? (en ? "As at " : "Setakat ") + KUTIPAN_TARIKH[en?1:0] : "";
   bar.setAttribute("aria-valuenow", String(Math.round(p)));
-  requestAnimationFrame(function(){ fill.style.width = p + "%"; });
+  requestAnimationFrame(function(){ fill.style.width = Math.max(p, 1.5) + "%"; });
 }
 function renderCost(){
   var body = document.getElementById("costBody");
