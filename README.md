@@ -8,3 +8,6 @@ Laman landing page statik untuk cadangan pembinaan Masjid U12, Cahaya Alam, Seks
 
 Kandungan diambil daripada Kertas Kerja Cadangan Pembinaan Masjid U12, draf V1, Ogos 2026.
 Angka kos ada dalam tatasusunan `KOS` di bahagian skrip `index.html`.
+
+Bahasa: halaman ini dwibahasa (BM dan EN). Teks BM ada dalam HTML; terjemahan EN ada pada atribut `data-en`
+(dan `data-en-alt`, `data-en-cap`, `data-en-aria`). Pautan terus ke versi Inggeris: `?lang=en`.
