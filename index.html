@@ -158,7 +158,7 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .auth dl{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:12px 22px;margin:20px 0 0}
 .auth dt{color:var(--gold-bright);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
 .auth dd{margin:0;color:#fff}
-.auth .letter{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.letter{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
 .lbtn{display:inline-flex;align-items:center;gap:9px;font:inherit;font-weight:700;color:#1b1b1b;background:var(--gold-bright);border:0;border-radius:999px;padding:11px 20px;cursor:pointer;min-height:44px}
 .lbtn:hover{filter:brightness(1.08)}.lbtn:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .auth .fine{margin:18px 0 0;font-size:15px;color:#D8D2BD}
@@ -206,6 +206,7 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .memh{text-align:center;margin:28px 0 12px;font-family:var(--head)}
 .members{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
 .members li{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;text-align:center;font-weight:600;color:var(--slate)}
+.letter+.fine{margin:14px 0 0;font-size:15px;color:var(--muted)}
 .approval{margin-top:22px;padding:16px 20px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);color:var(--muted)}
 .approval b{color:var(--slate)}
 
@@ -527,6 +528,15 @@ footer p{margin:0;max-width:62ch}
           <li data-en="Overseeing project progress until completion">Mengawal selia kemajuan projek sehingga siap</li>
         </ul></div>
     </div>
+    <div class="letter">
+      <button type="button" class="lbtn" data-full="img/surat-jais-1.jpg" data-cap="Surat kelulusan JAIS, muka 1 daripada 6 (alamat ditutup)" data-en-cap="JAIS approval letter, page 1 of 6 (address redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View JAIS approval letter (page 1)">Lihat surat kelulusan JAIS (muka 1)</span></button>
+      <button type="button" class="lbtn" data-full="img/surat-jais-2.jpg" data-cap="Surat kelulusan JAIS, muka 2 daripada 6" data-en-cap="JAIS approval letter, page 2 of 6"><span data-en="Page 2">Muka 2</span></button>
+      <button type="button" class="lbtn" data-full="img/surat-jais-3.jpg" data-cap="Surat kelulusan JAIS, muka 3 daripada 6" data-en-cap="JAIS approval letter, page 3 of 6"><span data-en="Page 3">Muka 3</span></button>
+      <button type="button" class="lbtn" data-full="img/surat-jais-4.jpg" data-cap="Surat kelulusan JAIS, muka 4 daripada 6" data-en-cap="JAIS approval letter, page 4 of 6"><span data-en="Page 4">Muka 4</span></button>
+      <button type="button" class="lbtn" data-full="img/surat-jais-5.jpg" data-cap="Surat kelulusan JAIS, muka 5 daripada 6" data-en-cap="JAIS approval letter, page 5 of 6"><span data-en="Page 5">Muka 5</span></button>
+      <button type="button" class="lbtn" data-full="img/surat-jais-6.jpg" data-cap="Surat kelulusan JAIS, muka 6 daripada 6 (No. K/P dan no. telefon ditutup)" data-en-cap="JAIS approval letter, page 6 of 6 (IC and phone numbers redacted)"><span data-en="Page 6 – committee list">Muka 6 – senarai jawatankuasa</span></button>
+    </div>
+    <p class="fine" data-en="Letter reference JAI.Sel.BPM/01/018/1(25). Personal details (address, IC numbers and phone numbers) have been redacted for privacy.">Rujukan surat JAI.Sel.BPM/01/018/1(25). Butiran peribadi (alamat, No. K/P dan no. telefon) telah ditutup demi privasi.</p>
     <p class="approval" data-en="<b>JAIS approval:</b> the committee list has been approved under letter reference JAI.Sel.BPM/01/018/1(25). <b>PWS authorisation:</b> Special Waqf collection is authorised until 31 December 2027, for the construction of Masjid U12 only."><b>Kelulusan JAIS:</b> senarai ahli jawatankuasa telah diluluskan menurut surat rujukan JAI.Sel.BPM/01/018/1(25). <b>Kebenaran PWS:</b> kutipan Wakaf Khas dibenarkan sehingga 31 Disember 2027, untuk pembinaan Masjid U12 sahaja.</p>
   </div>
 </section>
