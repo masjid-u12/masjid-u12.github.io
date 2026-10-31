@@ -152,9 +152,12 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .auth .fine{margin:18px 0 0;font-size:15px;color:#D8D2BD}
 
 /* DuitNow QR */
-.pay{margin-top:28px;display:grid;grid-template-columns:minmax(230px,330px) 1fr;gap:36px;align-items:center;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:32px}
+.pay{margin-top:28px;display:grid;grid-template-columns:minmax(230px,330px) 1fr;gap:36px;align-items:start;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:32px}
 .pay .tile{background:#fff;border:3px solid var(--gold-bright);border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .pay .tile img{width:100%;height:auto;aspect-ratio:1/1;display:block}
+.pay .qrcol{display:grid;gap:16px}
+.pay .qrcol .btn{width:100%}
+.pay .paymore{grid-column:1/-1;border-top:1px solid var(--line);padding-top:26px}
 .pay .kicker{color:var(--gold)}
 .pay h3{font-size:clamp(22px,3.2vw,30px);color:var(--slate);margin-bottom:8px}
 .pay .sub{color:var(--muted);margin:0 0 18px}
@@ -165,7 +168,7 @@ dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px
 .payee b{font-family:var(--head);letter-spacing:.02em}
 .pay .btn.primary{background:var(--slate);color:#fff}
 .pay .btn.primary:hover{background:var(--ink)}
-.pay .info{margin:0 0 18px;display:grid;gap:16px}
+.pay .info{margin:0 0 20px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .pay .info h4{margin:0 0 6px;font:700 13px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 .pay .info dl{display:grid;grid-template-columns:110px 1fr;gap:4px 14px;margin:0}
 .pay .info dt{color:var(--muted);font-size:15px}
@@ -194,6 +197,8 @@ footer p{margin:0;max-width:62ch}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .pay{grid-template-columns:1fr;gap:24px;padding:24px 20px}
   .pay .tile{max-width:320px;width:100%;margin:0 auto}
+  .pay .qrcol{max-width:320px;width:100%;margin:0 auto}
+  .pay .info{grid-template-columns:1fr}
   .auth dl{grid-template-columns:1fr;gap:2px}
   .auth dd{margin-bottom:14px}
   .burger{display:inline-flex;align-items:center}
@@ -395,7 +400,10 @@ footer p{margin:0;max-width:62ch}
       <p class="fine">Pemegang amanah dikehendaki mematuhi semua peraturan Kutipan Wakaf Khas yang ditetapkan oleh PWS.</p>
     </div>
     <div class="pay" id="qr">
-      <div class="tile"><img src="img/duitnow-qr.svg" alt="Kod DuitNow QR untuk menyumbang kepada Pembinaan Masjid U12" width="400" height="400"></div>
+      <div class="qrcol">
+        <div class="tile"><img src="img/duitnow-qr.svg" alt="Kod DuitNow QR untuk menyumbang kepada Pembinaan Masjid U12" width="400" height="400"></div>
+        <a class="btn primary" href="img/duitnow-qr.png" download="DuitNow-QR-Masjid-U12.png">Muat turun imej QR</a>
+      </div>
       <div>
         <p class="kicker">DuitNow QR</p>
         <h3>Sumbang dengan mengimbas</h3>
@@ -406,6 +414,8 @@ footer p{margin:0;max-width:62ch}
           <li><span>Semak nama penerima, masukkan jumlah sumbangan dan sahkan.</span></li>
         </ol>
         <p class="payee">Nama penerima: <b>Pembinaan Masjid U12 Cahaya Alam</b> (nama mungkin dipaparkan terpotong oleh aplikasi bank)</p>
+      </div>
+      <div class="paymore">
         <div class="info">
           <div>
             <h4>Maklumat akaun bank</h4>
@@ -424,7 +434,6 @@ footer p{margin:0;max-width:62ch}
           </div>
         </div>
         <p class="taxnote"><b>Potongan cukai pendapatan (LHDN)</b>Sumbangan wakaf layak mendapat potongan cukai pendapatan apabila anda menerima Resit Rasmi Potongan Wakaf daripada PWS, tertakluk kepada had 10% daripada pendapatan agregat. Sila minta resit dan berikan maklumat lengkap anda semasa menyumbang.</p>
-        <div class="btns"><a class="btn primary" href="img/duitnow-qr.png" download="DuitNow-QR-Masjid-U12.png">Muat turun imej QR</a></div>
       </div>
     </div>
     <div class="give">
