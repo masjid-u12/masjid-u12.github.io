@@ -100,6 +100,7 @@ h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:16px}
 .shot figcaption{padding:12px 14px;font-size:15px;font-weight:600;color:var(--slate)}
 .shot.wide{grid-column:1/-1}
 .shot.wide img{aspect-ratio:21/9}
+.shot.wide.plan img{aspect-ratio:3/1}
 dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);width:100%}
 dialog::backdrop{background:rgba(10,16,20,.88)}
 dialog .box{position:relative}
@@ -284,7 +285,7 @@ footer p{margin:0;max-width:62ch}
       <figure class="shot"><button type="button" data-full="img/shading.jpg" data-cap="Peranti pelindung matahari pada fasad"><img src="img/shading.jpg" alt="Panel pelindung matahari berukir pada fasad masjid" loading="lazy"></button><figcaption>Peranti pelindung matahari pada fasad</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/pintu-masuk.jpg" data-cap="Ruang masuk utama masjid"><img src="img/pintu-masuk.jpg" alt="Ruang masuk utama dengan siling kayu berukir dan bumbung kaca" loading="lazy"></button><figcaption>Ruang masuk utama masjid</figcaption></figure>
       <figure class="shot"><button type="button" data-full="img/dewan.jpg" data-cap="Ruang legar dan ruang limpah solat"><img src="img/dewan.jpg" alt="Ruang dalaman luas dengan tiang putih dan tingkap besar" loading="lazy"></button><figcaption>Ruang legar dan ruang limpah solat</figcaption></figure>
-      <figure class="shot wide"><button type="button" data-full="img/tampak.jpg" data-cap="Tampak hadapan"><img src="img/tampak.jpg" alt="Lukisan tampak hadapan masjid dengan kubah dan menara" loading="lazy"></button><figcaption>Tampak hadapan</figcaption></figure>
+      <figure class="shot wide plan"><button type="button" data-full="img/tampak.jpg" data-cap="Tampak hadapan"><img src="img/tampak.jpg" alt="Lukisan tampak hadapan masjid dengan kubah dan menara" loading="lazy"></button><figcaption>Tampak hadapan</figcaption></figure>
     </div>
   </div>
 </section>
@@ -458,8 +459,8 @@ footer p{margin:0;max-width:62ch}
 <script>
 /* Data kos pembinaan (RM), disalin daripada Kertas Kerja draf V1 (Ogos 2026).
    Ubah angka di sini jika anggaran disemak semula.
-   PERHATIAN: jumlah sembilan baris di bawah = RM30,462,400, tetapi kertas kerja
-   menyatakan jumlah keseluruhan RM30,952,400 (beza RM490,000). Semak dengan perunding. */
+   PERHATIAN: baris 7 (RM490,000) ialah baris penyesuaian sementara supaya jumlah baris
+   sepadan dengan jumlah kertas kerja RM30,952,400. Gantikan dengan butiran sebenar dari PDA. */
 var KOS = [
   ["1. Preliminaries (6% daripada Builders Works)", 1361000],
   ["2. Piling / Foundation", 924000],
@@ -467,9 +468,10 @@ var KOS = [
   ["4. Service (M&E Works)", 4417300],
   ["5. External Works", 2120000],
   ["6. Provisional Sum", 2500000],
-  ["7. Supervision (2% daripada kos pembinaan)", 530700],
-  ["8. Kos Perunding dan Pentadbiran (8%)", 2123000],
-  ["9. Sales and Service Tax (SST @ 8%)", 1762000]
+  ["7. Item lain dalam PDA (belum diperincikan di laman ini)", 490000],
+  ["8. Supervision (2% daripada kos pembinaan)", 530700],
+  ["9. Kos Perunding dan Pentadbiran (8%)", 2123000],
+  ["10. Sales and Service Tax (SST @ 8%)", 1762000]
 ];
 var JUMLAH = 30952400;
 
