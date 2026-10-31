@@ -88,6 +88,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdr
 .hero .lede{max-width:56ch;font-size:clamp(17px,2.2vw,20px);color:#EDE7D3;margin:18px 0 8px}
 .hero .hadith+.lede{margin-top:26px}
 .hero .place{font-weight:600;color:#fff;margin-bottom:26px}
+.hero .place{margin-bottom:0}
+.hero .wrap:not(:last-of-type){padding-bottom:0}
+.hero .wrap + .wrap{padding-top:32px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:12px;font-family:var(--head);font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn.primary{background:var(--gold-bright);color:var(--ink)}
