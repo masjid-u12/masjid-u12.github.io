@@ -153,6 +153,9 @@ dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);widt
 dialog::backdrop{background:rgba(10,16,20,.88)}
 dialog .box{position:relative}
 dialog img{width:100%;max-height:82vh;object-fit:contain;border-radius:10px;background:#111}
+dialog .pages{display:none;flex-direction:column;gap:12px;max-height:82vh;overflow-y:auto;border-radius:10px;-webkit-overflow-scrolling:touch}
+dialog .pages.on{display:flex}
+dialog .pages img{max-height:none;height:auto;object-fit:initial;background:#fff}
 dialog p{color:#fff;text-align:center;margin:10px 0 0;font-weight:600}
 dialog .close{position:absolute;top:8px;right:8px;min-height:48px;min-width:48px;border:0;border-radius:10px;background:var(--gold-bright);color:var(--ink);font:700 16px var(--body);cursor:pointer}
 
@@ -614,16 +617,8 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
         </ul></div>
     </div>
     <div class="letter">
-      <button type="button" class="lbtn" data-full="img/surat-jais-1.jpg" data-cap="Surat kelulusan JAIS, muka 1 daripada 6 (alamat ditutup)" data-en-cap="JAIS approval letter, page 1 of 6 (address redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View JAIS approval letter (page 1)">Lihat surat kelulusan JAIS (muka 1)</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-jais-2.jpg" data-cap="Surat kelulusan JAIS, muka 2 daripada 6" data-en-cap="JAIS approval letter, page 2 of 6"><span data-en="Page 2">Muka 2</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-jais-3.jpg" data-cap="Surat kelulusan JAIS, muka 3 daripada 6" data-en-cap="JAIS approval letter, page 3 of 6"><span data-en="Page 3">Muka 3</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-jais-4.jpg" data-cap="Surat kelulusan JAIS, muka 4 daripada 6" data-en-cap="JAIS approval letter, page 4 of 6"><span data-en="Page 4">Muka 4</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-jais-5.jpg" data-cap="Surat kelulusan JAIS, muka 5 daripada 6" data-en-cap="JAIS approval letter, page 5 of 6"><span data-en="Page 5">Muka 5</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-jais-6.jpg" data-cap="Surat kelulusan JAIS, muka 6 daripada 6 (No. K/P dan no. telefon ditutup)" data-en-cap="JAIS approval letter, page 6 of 6 (IC and phone numbers redacted)"><span data-en="Page 6 – committee list">Muka 6 – senarai jawatankuasa</span></button>
-    </div>
-    <div class="letter" style="margin-top:10px">
-      <button type="button" class="lbtn" data-full="img/surat-pws-1.jpg" data-cap="Surat kebenaran PWS, muka 1 daripada 2 (alamat dan butiran penandatangan resit ditutup)" data-en-cap="PWS authorisation letter, page 1 of 2 (address and receipt signatory details redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View PWS authorisation letter (page 1)">Lihat surat kebenaran PWS (muka 1)</span></button>
-      <button type="button" class="lbtn" data-full="img/surat-pws-2.jpg" data-cap="Surat kebenaran PWS, muka 2 daripada 2" data-en-cap="PWS authorisation letter, page 2 of 2"><span data-en="Page 2">Muka 2</span></button>
+      <button type="button" class="lbtn" data-pages="img/surat-jais-1.jpg,img/surat-jais-2.jpg,img/surat-jais-3.jpg,img/surat-jais-4.jpg,img/surat-jais-5.jpg,img/surat-jais-6.jpg" data-cap="Surat kelulusan JAIS, 6 muka surat (alamat, No. K/P dan no. telefon ditutup)" data-en-cap="JAIS approval letter, 6 pages (address, IC numbers and phone numbers redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View JAIS approval letter (6 pages)">Lihat surat kelulusan JAIS (6 muka surat)</span></button>
+      <button type="button" class="lbtn" data-pages="img/surat-pws-1.jpg,img/surat-pws-2.jpg" data-cap="Surat kebenaran PWS, 2 muka surat (alamat dan butiran penandatangan resit ditutup)" data-en-cap="PWS authorisation letter, 2 pages (address and receipt signatory details redacted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span data-en="View PWS authorisation letter (2 pages)">Lihat surat kebenaran PWS (2 muka surat)</span></button>
     </div>
     <p class="fine" data-en="Letter references: JAIS JAI.Sel.BPM/01/018/1(25); PWS dlm. PWS/BK/27 Jilid 2, dated 19 October 2026. Personal details (address, IC numbers and phone numbers) have been redacted for privacy.">Rujukan surat: JAIS JAI.Sel.BPM/01/018/1(25); PWS dlm. PWS/BK/27 Jilid 2, bertarikh 19 Oktober 2026. Butiran peribadi (alamat, No. K/P dan no. telefon) telah ditutup demi privasi.</p>
     <p class="approval" data-en="<b>JAIS approval:</b> The committee list has been approved under reference JAI.Sel.BPM/01/018/1(25). <b>PWS authorisation:</b> The Special Waqf collection is authorised until 31 December 2027, solely for the construction of Masjid U12."><b>Status kelulusan JAIS:</b> Senarai ahli jawatankuasa telah diluluskan berdasarkan surat rujukan JAI.Sel.BPM/01/018/1(25). <b>Status kebenaran PWS:</b> Kutipan Wakaf Khas dibenarkan sehingga 31 Disember 2027 khusus untuk pembinaan Masjid U12.</p>
@@ -676,6 +671,7 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
   <div class="box">
     <button class="close" type="button" id="lbClose" data-en="Close">Tutup</button>
     <img id="lbImg" alt="">
+    <div class="pages" id="lbPages"></div>
     <p id="lbCap"></p>
   </div>
 </dialog>
@@ -796,13 +792,31 @@ function applyLang(l){
     if(e.target.tagName === "A"){ menu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
   });
 
-  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap"), lbPages = document.getElementById("lbPages");
+  function openLb(){ if(lb.showModal){ lb.showModal(); } else { lb.setAttribute("open",""); } }
   document.querySelectorAll("[data-full]").forEach(function(btn){
     btn.addEventListener("click", function(){
+      lbPages.classList.remove("on"); lbPages.innerHTML = ""; lbImg.style.display = "";
       lbImg.src = btn.getAttribute("data-full");
       lbImg.alt = btn.getAttribute("data-cap") || "";
       lbCap.textContent = btn.getAttribute("data-cap") || "";
-      if(lb.showModal){ lb.showModal(); } else { lb.setAttribute("open",""); }
+      openLb();
+    });
+  });
+  /* Surat berbilang muka surat: semua muka dipaparkan bertindan dalam satu paparan */
+  document.querySelectorAll("[data-pages]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var cap = btn.getAttribute("data-cap") || "", list = btn.getAttribute("data-pages").split(",");
+      lbPages.innerHTML = "";
+      list.forEach(function(src, i){
+        var im = document.createElement("img");
+        im.src = src; im.loading = "lazy"; im.alt = cap + " (" + (i+1) + "/" + list.length + ")";
+        lbPages.appendChild(im);
+      });
+      lbImg.removeAttribute("src"); lbImg.style.display = "none"; lbImg.alt = cap;
+      lbPages.classList.add("on"); lbPages.scrollTop = 0;
+      lbCap.textContent = cap;
+      openLb();
     });
   });
   document.getElementById("lbClose").addEventListener("click", function(){ lb.close ? lb.close() : lb.removeAttribute("open"); });
