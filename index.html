@@ -46,13 +46,13 @@ p{margin:0 0 1em}
 /* navigasi */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(27,40,48,.96);backdrop-filter:blur(6px);color:#fff}
 .nav .wrap{display:flex;align-items:center;gap:8px;min-height:68px;position:relative}
-.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;margin-right:auto;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;min-width:0}
 .brand img{width:auto;height:60px;object-fit:contain;flex:none;display:block}
 .brand .bt{display:flex;flex-direction:column;line-height:1.1;min-width:0}
 .brand .b1{font-family:var(--head);font-weight:700;font-size:20px;letter-spacing:.01em;white-space:nowrap}
 .brand .b2{font-family:var(--body);font-weight:400;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright);margin-top:4px;white-space:nowrap}
-.gov{display:flex;align-items:center;justify-content:center;gap:28px;background:var(--ink);padding:8px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
-.gov img{height:52px;width:auto;display:block}
+.gov{display:flex;align-items:center;gap:14px;flex:none;margin:0 auto 0 12px;padding-left:18px;border-left:1px solid rgba(255,255,255,.22)}
+.gov img{height:44px;width:auto;display:block}
 .menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 .menu a{display:inline-flex;align-items:center;min-height:48px;padding:0 12px;color:#EDE7D3;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px}
 .menu a:hover{background:rgba(255,255,255,.1);color:#fff}
@@ -299,6 +299,21 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
 .fbar p{margin:0;max-width:70ch}.fdu{color:var(--gold-bright);font-weight:600}
 @media (max-width:860px){.fgrid{grid-template-columns:1fr;gap:28px}}
 
+@media (max-width:1120px){
+  .burger{display:inline-flex}
+  .lang{margin-left:0}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);flex-direction:column;padding:8px 20px 16px;border-top:1px solid rgba(255,255,255,.15)}
+  .menu.open{display:flex}
+}
+@media (max-width:520px){
+  .nav .wrap{gap:6px;padding:0 12px}
+  .brand{gap:8px}
+  .brand .b1{font-size:14px;letter-spacing:0}
+  .brand .b2{display:none}
+  .gov{gap:8px;margin-left:4px;padding-left:8px}
+  .gov img{height:32px}
+  .lang button{min-width:40px;padding:0 8px}
+}
 @media (max-width:860px){
   .split,.give{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
@@ -347,17 +362,16 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
 <body>
 <a class="skip" href="#kandungan" data-en="Skip to content">Langkau ke kandungan</a>
 
-<div class="gov">
-  <img src="img/jata-selangor.png" alt="Jata Negeri Selangor" data-en-alt="Selangor state crest" width="35" height="52">
-  <img src="img/logo-jais.png" alt="Logo Jabatan Agama Islam Selangor (JAIS)" data-en-alt="Selangor Islamic Religion Department (JAIS) logo" width="42" height="52">
-</div>
-
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#atas" aria-label="Masjid U12, Cahaya Alam, ke atas" data-en-aria="Masjid U12, Cahaya Alam, back to top">
       <img src="img/logo-v2.png" alt="Logo Masjid U12 Cahaya Alam" data-en-alt="Masjid U12 Cahaya Alam logo" width="48" height="60">
       <span class="bt"><span class="b1">Masjid U12</span><span class="b2">Cahaya Alam</span></span>
     </a>
+    <div class="gov">
+      <img src="img/jata-selangor.png" alt="Jata Negeri Selangor" data-en-alt="Selangor state crest" width="30" height="44">
+      <img src="img/logo-jais.png" alt="Logo Jabatan Agama Islam Selangor (JAIS)" data-en-alt="Selangor Islamic Religion Department (JAIS) logo" width="35" height="44">
+    </div>
     <ul class="menu" id="menu">
       <li><a href="#mengapa" data-en="The need">Keperluan</a></li>
       <li><a href="#reka-bentuk" data-en="Design">Reka Bentuk</a></li>
