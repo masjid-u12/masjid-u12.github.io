@@ -594,7 +594,7 @@ footer h4{margin:0 0 12px;font-size:13px;letter-spacing:.14em;text-transform:upp
       <div class="card status" style="grid-column:1/-1">
         <span class="pill" data-en="Updated">Dikemas kini</span>
         <h3 data-en="Total Contributions Collected">Jumlah Kutipan</h3>
-        <p id="fundCard" data-en="Latest contributions: RM22,000 of RM30,952,400 needed (as at 31 Oct 2026).">Kutipan terkini: RM22,000 daripada RM30,952,400 diperlukan (setakat 31 Okt 2026).</p>
+        <p id="fundCard" data-en="Latest contributions: RM25,108 of RM30,952,400 needed (as at 1 Nov 2026).">Kutipan terkini: RM25,108 daripada RM30,952,400 diperlukan (setakat 1 Nov 2026).</p>
       </div>
     </div>
   </div>
@@ -710,7 +710,7 @@ function fmt(n){ return "RM" + n.toLocaleString("en-US", {minimumFractionDigits:
 
 
 /* Kutipan terkini: kemas kini dua nilai ini sahaja (RM, nombor). null = belum dimuktamadkan. */
-var KUTIPAN = 22000, KUTIPAN_TARIKH = ["31 Okt 2026","31 Oct 2026"];
+var KUTIPAN = 25108, KUTIPAN_TARIKH = ["1 Nov 2026","1 Nov 2026"];
 function renderFund(){
   var en = LANG === "en", T = JUMLAH, K = KUTIPAN;
   var now = document.getElementById("fundNow");
