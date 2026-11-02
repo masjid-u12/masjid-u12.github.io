@@ -851,6 +851,38 @@ function applyLang(l){
   document.getElementById("lbClose").addEventListener("click", function(){ lb.close ? lb.close() : lb.removeAttribute("open"); });
   lb.addEventListener("click", function(e){ if(e.target === lb){ lb.close(); } });
 
+  /* Pautan dalam halaman: skrol licin, kemudian pastikan benar-benar sampai ke sasaran.
+     Skrol licin sejauh ribuan piksel (cth. butang "Berwakaf sekarang" ke kod QR) kadangkala
+     terhenti di tengah jalan; jika begitu, kedudukan akhir dibetulkan. Dibatalkan jika pengguna
+     sendiri menskrol. */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      var id = a.getAttribute("href").slice(1), t = id ? document.getElementById(id) : null;
+      if(!t || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      var dest = function(){ return Math.max(0, Math.round(t.getBoundingClientRect().top + window.pageYOffset - pad)); };
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches;
+      try { history.pushState(null, "", "#" + id); } catch(err){}
+      window.scrollTo({top: dest(), behavior: reduce ? "auto" : "smooth"});
+      var user = false, stop = function(){ user = true; };
+      ["wheel","touchstart","keydown","mousedown"].forEach(function(ev){
+        window.addEventListener(ev, stop, {once:true, passive:true});
+      });
+      var last = -1, still = 0, tries = 0;
+      (function check(){
+        if(user) return;
+        var y = Math.round(window.pageYOffset);
+        still = (y === last) ? still + 1 : 0; last = y;
+        if(still >= 4){
+          if(Math.abs(y - dest()) > 2) window.scrollTo({top: dest(), behavior: "auto"});
+          return;
+        }
+        if(++tries < 120) setTimeout(check, 100);
+      })();
+    });
+  });
+
   /* Pilihan bahasa: ?lang=en, atau pilihan terakhir yang disimpan, atau BM */
   document.querySelectorAll(".lang button").forEach(function(b){
     b.addEventListener("click", function(){
